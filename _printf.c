@@ -3,8 +3,6 @@
  * _printf - write an output according to a format
  * @format: the characters to print or the flags.
  * Return: the number of characters printed.i
- * c: travel the input
- * q: count the characters
  */
 int _printf(const char *format, ...)
 {
@@ -20,34 +18,24 @@ int _printf(const char *format, ...)
 		while (format[c] != '%' && format[c] != '\0')
 		{
 			_putchar(format[c]);
-			q++;
-			c++;
-		}
+			q++, c++; }
 		if (format[c] == '\0')
 			return (q);
 		f = select_func(&format[c + 1]);
 		if (f != NULL)
 		{
-			q += f(arg);
-			c += 2;
-			continue;
-		}
+			q += f(arg), c += 2;
+			continue; }
 		else if (format[c + 1] == '\0')
 			return (-1);
 		else if (format[c + 1] == '%')
 		{
 			_putchar(format[c]);
-			c += 2;
-			q++;
-		}
+			c += 2, q++; }
 		else
 		{
 			_putchar(format[c]);
-			q++;
-			c++;
-		}
-
+			q++, c++; }
 	}
 	va_end(arg);
-	return (q);
-}
+	return (q); }

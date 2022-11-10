@@ -34,8 +34,8 @@ int pf_s(va_list s)
 	return (q);
 }
 /**
- * pf_i - add a int
- * @i:int
+ * pf_d - add a int
+ * @d:int
  * Return: q
  */
 int pf_d(va_list d)
@@ -67,32 +67,37 @@ int pf_d(va_list d)
 	}
 	return (q);
 }
+/**
+ *pf_i - add a int
+ *@i:int
+ *Return: q
+ */
 int pf_i(va_list i)
 {
-        int x, den = 1, q = 0;
-        unsigned int num;
+	int x, den = 1, q = 0;
+	unsigned int num;
 
-        x = va_arg(i, int);
+	x = va_arg(i, int);
 
-        if (x < 0)
-        {
-                q += _putchar('-');
-                num = x * -1;
-        }
+	if (x < 0)
+	{
+		q += _putchar('-');
+		num = x * -1;
+	}
 
-        else
-        {
-                num = x;
-        }
+	else
+	{
+		num = x;
+	}
 
-        while (num / den > 9)
-                den = den * 10;
+	while (num / den > 9)
+		den = den * 10;
 
-        while (den != 0)
-        {
-                q += _putchar((num / den) + '0');
-                num = num % den;
-                den = den / 10;
-        }
-        return (q);
+	while (den != 0)
+	{
+		q += _putchar((num / den) + '0');
+		num = num % den;
+		den = den / 10;
+	}
+	return (q);
 }
