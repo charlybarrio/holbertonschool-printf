@@ -32,14 +32,21 @@ int _printf(const char *format, ...)
 			c += 2;
 			continue;
 		}
-		if (format[c + 1] == '\0')
+		else if (format[c + 1] == '\0')
 			return (-1);
-		if (format[c + 1] == '%')
+		else if (format[c + 1] == '%')
+		{
+			_putchar(format[c]);
 			c += 2;
+			q++;
+		}
 		else
-		_putchar(format[c]);
-	        q++;
+		{
+			_putchar(format[c]);
+			q++;
 			c++;
+		}
+
 	}
 	va_end(arg);
 	return (q);
