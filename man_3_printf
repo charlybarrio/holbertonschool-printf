@@ -1,0 +1,43 @@
+.TH man_3_printf
+
+.SH NAME
+.B _printf: Sends a formatted output to the screen.
+
+.SH SYNOPSIS
+#include "main.h"
+.br
+int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+Using the _printf function we can write data to the standard output device (screen). The _printf function can write any combination of numeric values, single characters and character strings. 
+
+The printf function transports data from memory to the screen, and returns the number of characters written.
+
+.B Conversion specifiers
+.br
+A character that specifies the type of conversion to be applied.
+.br 
+The conversion specifiers and their meanings are:
+.TP
+c - Print ARGUMENT of character type
+
+.TP
+s - Print ARGUMENT of string type
+
+.TP
+%% - Prints a single %
+
+.TP
+d - Print ARGUMENT of decimal type
+
+.TP
+i - Print ARGUMENT of type integer
+
+.SH RETURN VALUE
+If the function completes successfully, it returns the number of characters printed.
+.br
+Otherwise it returns -1.
+
+
+.SH AUTHOR
+.B Written by Charly Barrio and Lucas Soria.
