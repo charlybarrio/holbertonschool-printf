@@ -44,4 +44,6 @@ No more than 5 functions per file.
 
 
 ### Flowcharts
+![Diagrama](https://user-images.githubusercontent.com/44532670/201565160-a8cb88d1-4035-46e8-98d8-fcad63a42c75.jpg)
+
 
